@@ -20,6 +20,10 @@ export default function Footer() {
           <p className={styles.brandDesc}>
             Software Engineering Student<br />Full-Stack Web &amp; Mobile Developer
           </p>
+          <p className={styles.brandDesc}>
+            Last Update: July 2026
+          </p>
+          
           <div className={styles.socials}>
             <a href={PERSONAL.github}   target="_blank" rel="noopener noreferrer" className={styles.social} aria-label="GitHub"><Github size={15} /></a>
             <a href={PERSONAL.linkedin} target="_blank" rel="noopener noreferrer" className={styles.social} aria-label="LinkedIn"><Linkedin size={15} /></a>
