@@ -177,20 +177,6 @@
   flex-shrink: 0;
 }
 
-/* Progress bar */
-.bar {
-  height: 3px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 99px;
-  overflow: hidden;
-}
-.barFill {
-  height: 100%;
-  border-radius: 99px;
-  width: 0%;
-  transition: width 0.8s var(--ease-spring);
-}
-
 @media (max-width: 640px) {
   .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
 }

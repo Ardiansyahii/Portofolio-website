@@ -95,20 +95,32 @@ export default function Contact() {
 
       <div className="container">
         {/* Headline */}
-        <div ref={hRef} className={`${styles.headline} reveal ${hView ? 'in' : ''}`}>
-          <p className="section-eyebrow" style={{ justifyContent: 'center' }}>Let's Connect</p>
+        <div
+          ref={hRef}
+          className={`${styles.headline} reveal ${hView ? "in" : ""}`}
+        >
+          <p className="section-eyebrow" style={{ justifyContent: "center" }}>
+            Let's Connect
+          </p>
           <h2 className={styles.bigTitle}>
-            Have an idea?<br />
-            <span className="gradient-text">Let's build it together.</span>
+            Open to internship opportunities and collaborative projects.
+            <br />
+            <span className="gradient-text">
+              Let's learn and build together.
+            </span>
           </h2>
           <p className={styles.sub}>
-            I'm actively looking for internship opportunities. Whether you want to
-            collaborate on a project, or just want to say hi — my inbox is always open.
+            I'm actively looking for internship opportunities. Whether you want
+            to collaborate on a project, or just want to say hi — my inbox is
+            always open.
           </p>
         </div>
 
         {/* Main card */}
-        <div ref={cRef} className={`${styles.card} ${cView ? styles.cardIn : ''}`}>
+        <div
+          ref={cRef}
+          className={`${styles.card} ${cView ? styles.cardIn : ""}`}
+        >
           <div className={styles.cardBg} aria-hidden="true" />
 
           {/* Status bar */}
@@ -135,11 +147,11 @@ export default function Contact() {
 
           {/* Footer */}
           <div className={styles.cardFooter}>
-            <Sparkles size={14} style={{ color: 'var(--cyan)' }} />
+            <Sparkles size={14} style={{ color: "var(--cyan)" }} />
             <span>Looking forward to building something great with you.</span>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
