@@ -18,7 +18,7 @@ export default function Footer() {
             {PERSONAL.shortName}<span className={styles.dot}>.</span>
           </a>
           <p className={styles.brandDesc}>
-            Software Engineering Student<br />Full-Stack Web & Mobile Developer
+            Software Engineering Student<br />Full-Stack Web &amp; Mobile Developer
           </p>
           <div className={styles.socials}>
             <a href={PERSONAL.github}   target="_blank" rel="noopener noreferrer" className={styles.social} aria-label="GitHub"><Github size={15} /></a>

@@ -157,7 +157,7 @@ export default function Hero() {
             <a href={PERSONAL.linkedin} target="_blank" rel="noopener noreferrer" className={styles.socialBtn} aria-label="LinkedIn">
               <Linkedin size={17} />
             </a>
-            <a href={`https://mail.google.com/mail/?view=cm&to=${PERSONAL.email}`} target="_blank" rel="noopener noreferrer" className={styles.socialBtn} aria-label="Email">
+            <a href={`mailto:${PERSONAL.email}`} className={styles.socialBtn} aria-label="Email">
               <Mail size={17} />
             </a>
             <div className={styles.socialDivider} />

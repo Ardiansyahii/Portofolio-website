@@ -52,6 +52,12 @@
   min-height: 100vh;
 }
 
+.left {
+  display: flex;
+  flex-direction: column;
+  max-width: 620px;
+}
+
 /* ── Reveal ── */
 .badge, .name, .roleWrap, .tagline, .actions, .socials, .right {
   opacity: 0;

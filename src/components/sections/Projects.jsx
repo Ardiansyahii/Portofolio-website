@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { Github, ExternalLink, ChevronRight, ArrowUpRight, Terminal } from 'lucide-react'
 import { PROJECTS } from '../../constants/data'
