@@ -1,0 +1,129 @@
+.footer {
+  position: relative;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+.glow {
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 200px;
+  background: radial-gradient(ellipse, rgba(99,102,241,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3.5rem clamp(1.25rem, 5vw, 3.5rem) 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: 3rem;
+  position: relative;
+}
+.brand {}
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--t-white);
+  letter-spacing: -0.5px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  transition: opacity 0.2s;
+}
+.logo:hover { opacity: 0.75; }
+.dot { color: var(--cyan); }
+.brandDesc {
+  font-size: 0.8rem;
+  color: var(--t-low);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.socials { display: flex; gap: 0.5rem; }
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--t-low);
+  transition: all 0.2s;
+}
+.social:hover { border-color: rgba(99,102,241,0.4); color: var(--t-white); background: rgba(99,102,241,0.08); }
+
+.navTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--t-low);
+  margin-bottom: 1rem;
+}
+.nav { display: flex; flex-direction: column; gap: 0.1rem; }
+.navLink {
+  padding: 0.35rem 0;
+  font-size: 0.85rem;
+  color: var(--t-mid);
+  transition: color 0.2s, padding-left 0.15s;
+}
+.navLink:hover { color: var(--t-white); padding-left: 4px; }
+
+.contact {}
+.contactLink {
+  display: inline-block;
+  font-size: 0.82rem;
+  color: var(--t-mid);
+  margin-bottom: 0.35rem;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+.contactLink:hover { color: var(--indigo); }
+.contactSub {
+  font-size: 0.75rem;
+  color: var(--t-low);
+  margin-bottom: 1rem;
+}
+.availBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--green);
+}
+.availDot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: glow 2s infinite;
+}
+@keyframes glow {
+  0%,100% { box-shadow: 0 0 4px var(--green); }
+  50%      { box-shadow: 0 0 10px var(--green); }
+}
+
+.bar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.25rem clamp(1.25rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.copy { font-size: 0.78rem; color: var(--t-low); }
+.copy span { color: var(--t-mid); }
+.made { font-size: 0.75rem; color: var(--t-low); }
+
+@media (max-width: 768px) {
+  .inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .bar { flex-direction: column; text-align: center; }
+}
