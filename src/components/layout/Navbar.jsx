@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { NAV_LINKS, PERSONAL } from '../../constants/data'
 import { useScrollspy } from '../../hooks/useScrollspy'
+import ResumeButton from '../ui/ResumeButton'
 import styles from './Navbar.module.css'
 
-const SECTION_IDS = ['about', 'skills', 'projects', 'contact']
+const SECTION_IDS = ['about', 'skills', 'projects', 'certificates', 'contact']
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -56,9 +57,11 @@ export default function Navbar() {
             ))}
           </nav>
 
+          <ResumeButton variant="nav" />
+
           <a href="#contact" className={styles.cta} onClick={e => go(e, '#contact')}>
             <span className={styles.ctaPulse} aria-hidden="true" />
-            Hire Me
+            PKL Slot →
           </a>
 
           <button
@@ -79,8 +82,9 @@ export default function Navbar() {
             {label}
           </a>
         ))}
+        <ResumeButton variant="mobile" />
         <a href="#contact" className={styles.mobileCta} onClick={e => go(e, '#contact')} tabIndex={menuOpen ? 0 : -1}>
-          Hire Me →
+          PKL Slot →
         </a>
       </div>
       {menuOpen && <div className={styles.backdrop} onClick={() => setMenuOpen(false)} aria-hidden="true" />}

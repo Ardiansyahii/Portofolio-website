@@ -18,12 +18,8 @@ export default function Footer() {
             {PERSONAL.shortName}<span className={styles.dot}>.</span>
           </a>
           <p className={styles.brandDesc}>
-            Software Engineering Student<br />Full-Stack Web &amp; Mobile Developer
+            SMK Software Engineering Student<br />Seeking PKL Placement · 2025
           </p>
-          <p className={styles.brandDesc}>
-            Last Update: July 2026
-          </p>
-          
           <div className={styles.socials}>
             <a href={PERSONAL.github}   target="_blank" rel="noopener noreferrer" className={styles.social} aria-label="GitHub"><Github size={15} /></a>
             <a href={PERSONAL.linkedin} target="_blank" rel="noopener noreferrer" className={styles.social} aria-label="LinkedIn"><Linkedin size={15} /></a>
@@ -49,7 +45,7 @@ export default function Footer() {
           <p className={styles.contactSub}>{PERSONAL.location} · {PERSONAL.timezone}</p>
           <div className={styles.availBadge}>
             <span className={styles.availDot} />
-            Open to internship opportunities
+            Actively seeking PKL placement
           </div>
         </div>
       </div>

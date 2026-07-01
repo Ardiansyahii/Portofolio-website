@@ -1,0 +1,159 @@
+.wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* ── Trigger button ── */
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s var(--ease-spring);
+  white-space: nowrap;
+}
+
+.chevron {
+  transition: transform 0.2s;
+  opacity: 0.6;
+}
+.chevronOpen { transform: rotate(180deg); }
+
+/* ── Variant: hero (large dashed button) ── */
+.hero .trigger {
+  padding: 0.8rem 1.4rem;
+  background: transparent;
+  color: var(--t-mid);
+  border: 1px dashed rgba(99,102,241,0.35);
+  border-radius: var(--r-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.hero .trigger:hover {
+  border-style: solid;
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(34,211,238,0.06);
+  transform: translateY(-2px);
+}
+
+/* ── Variant: nav (small desktop button) ── */
+.nav .trigger {
+  padding: 0.45rem 1rem;
+  background: transparent;
+  color: var(--t-mid);
+  border: 1px dashed rgba(34,211,238,0.3);
+  border-radius: var(--r-md);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+.nav .trigger:hover {
+  border-style: solid;
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(34,211,238,0.06);
+}
+
+/* ── Variant: mobile (full-width menu item) ── */
+.mobile { display: block; width: 100%; }
+.mobile .trigger {
+  width: 100%;
+  padding: 0.8rem 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(99,102,241,0.07);
+  color: var(--cyan);
+  font-size: 0.95rem;
+  font-weight: 500;
+  justify-content: flex-start;
+}
+.mobile .dropdown {
+  position: static;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--r-md);
+  box-shadow: none;
+}
+
+/* ── Variant: card (Contact section row) ── */
+.card { display: block; width: 100%; }
+.card .trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: rgba(34,211,238,0.04);
+  border: 1px dashed rgba(34,211,238,0.25);
+  border-radius: var(--r-lg);
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--t-hi);
+  justify-content: flex-start;
+}
+.card .trigger span:first-of-type { flex: 1; }
+.card .trigger:hover {
+  background: rgba(34,211,238,0.08);
+  border-style: solid;
+  border-color: rgba(34,211,238,0.45);
+  transform: translateY(-2px);
+}
+
+/* ── Dropdown ── */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  overflow: hidden;
+  z-index: 50;
+  animation: dropIn 0.15s var(--ease-spring);
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--t-mid);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+.option:last-child { border-bottom: none; }
+.option:hover {
+  background: rgba(99,102,241,0.08);
+  color: var(--t-white);
+}
+
+.flag {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.optLabel { flex: 1; }
+
+/* Card variant dropdown anchors below the full row */
+.card .dropdown {
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-width: 0;
+}

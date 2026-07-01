@@ -21,37 +21,34 @@ function MarqueeRow({ items, reverse = false, speed = 35 }) {
 
 /* Glowing skill card with proficiency bar */
 function SkillCard({ skill, index }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-  const cardRef = useRef(null);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
+  const cardRef = useRef(null)
 
   const handleMove = (e) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    cardRef.current.style.setProperty("--mx", x + "%");
-    cardRef.current.style.setProperty("--my", y + "%");
-  };
+    if (!cardRef.current) return
+    const rect = cardRef.current.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    cardRef.current.style.setProperty('--mx', x + '%')
+    cardRef.current.style.setProperty('--my', y + '%')
+  }
 
   return (
     <div
-      ref={(el) => {
-        ref(el);
-        cardRef.current = el;
-      }}
-      className={`${styles.skillCard} ${inView ? styles.skillIn : ""}`}
+      ref={(el) => { ref(el); cardRef.current = el }}
+      className={`${styles.skillCard} ${inView ? styles.skillIn : ''}`}
       style={{ transitionDelay: `${(index % 8) * 0.04}s` }}
       onMouseMove={handleMove}
       role="listitem"
     >
+      {/* Spotlight effect */}
       <div className={styles.cardSpot} aria-hidden="true" />
-
       <div className={styles.cardTop}>
         <span className={styles.skillDot} style={{ background: skill.color }} />
         <span className={styles.skillName}>{skill.name}</span>
       </div>
     </div>
-  );
+  )
 }
 
 export default function Skills() {

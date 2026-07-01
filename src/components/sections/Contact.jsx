@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { Mail, Linkedin, Github, ArrowUpRight, MapPin, Clock, Sparkles } from 'lucide-react'
 import { PERSONAL } from '../../constants/data'
 import { openEmail } from '../../utils/openEmail'
+import ResumeButton from '../ui/ResumeButton'
 import styles from './Contact.module.css'
 
 const ITEMS = [
@@ -11,7 +12,7 @@ const ITEMS = [
     label: 'Email — Preferred',
     value: PERSONAL.email,
     href: '#',
-    hint: 'I reply within 24 hours',
+    hint: 'Reach out about PKL — reply within 24h',
     accent: '#6366f1',
     isEmail: true,
   },
@@ -54,7 +55,7 @@ function MagneticItem({ item, index }) {
   const handleClick = (e) => {
     if (item.isEmail) {
       e.preventDefault()
-      openEmail(PERSONAL.email, 'Internship Opportunity — Portfolio Contact')
+      openEmail(PERSONAL.email, 'PKL Opportunity — Portfolio Contact')
     }
   }
 
@@ -95,39 +96,28 @@ export default function Contact() {
 
       <div className="container">
         {/* Headline */}
-        <div
-          ref={hRef}
-          className={`${styles.headline} reveal ${hView ? "in" : ""}`}
-        >
-          <p className="section-eyebrow" style={{ justifyContent: "center" }}>
-            Let's Connect
-          </p>
+        <div ref={hRef} className={`${styles.headline} reveal ${hView ? 'in' : ''}`}>
+          <p className="section-eyebrow" style={{ justifyContent: 'center' }}>Let's Connect</p>
           <h2 className={styles.bigTitle}>
-            Open to internship opportunities and collaborative projects.
-            <br />
-            <span className="gradient-text">
-              Let's learn and build together.
-            </span>
+            Have a PKL slot?<br />
+            <span className="gradient-text">Let's talk — I'm ready.</span>
           </h2>
           <p className={styles.sub}>
-            I'm actively looking for internship opportunities. Whether you want
-            to collaborate on a project, or just want to say hi — my inbox is
-            always open.
+            I'm an SMK student actively looking for a PKL placement in
+            Full-Stack Web or Mobile Development. I'm ready to contribute
+            from day one — feel free to reach out anytime.
           </p>
         </div>
 
         {/* Main card */}
-        <div
-          ref={cRef}
-          className={`${styles.card} ${cView ? styles.cardIn : ""}`}
-        >
+        <div ref={cRef} className={`${styles.card} ${cView ? styles.cardIn : ''}`}>
           <div className={styles.cardBg} aria-hidden="true" />
 
           {/* Status bar */}
           <div className={styles.statusBar}>
             <div className={styles.statusLeft}>
               <span className={styles.greenDot} />
-              <span>Available for internship · Response &lt; 24h</span>
+              <span>Actively seeking PKL placement · Response &lt; 24h</span>
             </div>
             <div className={styles.statusRight}>
               <MapPin size={12} />
@@ -145,13 +135,16 @@ export default function Contact() {
             ))}
           </div>
 
+          {/* Resume download */}
+          <ResumeButton variant="card" />
+
           {/* Footer */}
           <div className={styles.cardFooter}>
-            <Sparkles size={14} style={{ color: "var(--cyan)" }} />
-            <span>Looking forward to building something great with you.</span>
+            <Sparkles size={14} style={{ color: 'var(--cyan)' }} />
+            <span>Let's build real things together during my PKL. I won't disappoint.</span>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

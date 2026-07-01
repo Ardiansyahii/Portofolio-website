@@ -150,6 +150,8 @@
   background: rgba(0,0,0,0.6);
 }
 
+
+
 @media (max-width: 768px) {
   .links { display: none; }
   .cta   { display: none; }

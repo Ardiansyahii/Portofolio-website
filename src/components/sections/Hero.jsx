@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Github, Linkedin, Mail, ArrowDown, Sparkles } from 'lucide-react'
 import { PERSONAL, TYPED_ROLES } from '../../constants/data'
 import { useTypewriter } from '../../hooks/useTypewriter'
+import ResumeButton from '../ui/ResumeButton'
 import styles from './Hero.module.css'
 
 /* ── Aurora canvas background ── */
@@ -141,12 +142,13 @@ export default function Hero() {
           <div className={`${styles.actions} ${loaded ? styles.in : ''}`} style={{ '--delay': '0.6s' }}>
             <a href="#projects" className={styles.btnPrimary} onClick={e => scroll(e, 'projects')}>
               <Sparkles size={15} />
-              View My Work
+              See My Projects
             </a>
             <a href="#contact" className={styles.btnGhost} onClick={e => scroll(e, 'contact')}>
               <Mail size={15} />
-              Let's Talk
+              Offer Me a PKL Slot
             </a>
+            <ResumeButton variant="hero" />
           </div>
 
           {/* Socials */}
